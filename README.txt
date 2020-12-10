@@ -11,4 +11,4 @@ https://protege.stanford.edu/conference/2006/submissions/slides/OWLTutorial_Part
 
 - Semantic Web in W3C
 https://www.w3.org/standards/semanticweb/#recent
-https://www.w3.org/standards/semanticweb/query}
+https://www.w3.org/standards/semanticweb/query
