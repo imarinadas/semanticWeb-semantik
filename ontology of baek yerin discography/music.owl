@@ -1,0 +1,2274 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26">
+    <Prefix name="" IRI="http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="#Creator"/>
+        <Literal xml:lang="en">123180126 - Nada Salsabila Imari</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#Question_Example_for_SPARQL"/>
+        <Literal xml:lang="en">Q1 : What is Baek Yerin&apos;s performed works as the main artist? 
+
+Q2: Which labels Baek Yerin used to promote under?
+
+Q3: What is Baek Yerin’s performed works as the main artist that released under Blue Vinyl?
+
+Q4: When Baek Yerin making soundtrack appearances?
+
+Q5: What is duet songs featured by Baek Yerin that released under JYP?
+
+Q6: Who is the lead artist under the label that has a duet song with Baek Yerin?
+
+Q7: What is the duet song that released in 2015?
+
+Q8: Which label has been released Baek Yerin&apos;s written songs?
+
+Q9: Which Baek Yerin’s written songs that performed by Yeonsoo?
+
+Q10: Which label has no artists?</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="#SPARQL_Query"/>
+        <Literal xml:lang="en">Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Artist ?Discography
+	WHERE {
+		?Discography :performed_by ?Artist.
+		FILTER(?Artist = &quot;BaekYerin&quot;).
+
+ }
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Artist ?Label
+WHERE { 
+		?Label :was_promote ?Artist.
+		?Artist :has_artist_name ?value.
+		FILTER(?value = &quot;BaekYerin&quot;).
+}
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Label ?Artist ?Discography
+	WHERE {
+		?Discography :released_under ?Label.
+		?Discography :performed_by ?Artist.
+		FILTER(?Artist = &quot;BaekYerin&quot;).
+		FILTER(?Label = &quot;BlueVinyl&quot;).
+ }
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Year ?Soundtrack
+WHERE { 
+		?Soundtrack :soundtrack_by ?Main.
+		?Soundtrack :released_time ?Year.
+}
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Label ?Discography ?Artist ?Main
+	WHERE { 
+		?Artist :was_perform ?Discography.
+		?Discography :featured_artist ?Main.
+		?Discography :released_under ?Label.
+		
+		FILTER(?Label = &quot;JYP&quot;).
+}
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Artist ?Label ?Discography
+WHERE { 
+		?Label :was_promote ?Artist.
+		?Artist :was_perform ?Discography.
+		?Discography :featured_artist ?Main.
+}
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Year ?Discography ?Artist ?Featured
+	WHERE { 
+		?Artist :was_perform ?Discography.
+		?Discography :featured_artist ?Featured.
+		?Discography :released_time ?Year
+		
+		FILTER(?Year = &quot;2015&quot;).
+}
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Label ?Discography ?Artist
+WHERE { 
+		?Discography :released_under ?Label.
+		?Discography :written_by ?Main.
+		?Discography :performed_by ?Artist.
+}
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Artist ?Discography ?Label
+WHERE { 
+		?Discography :released_under ?Label.
+		?Discography :written_by ?Main.
+		?Discography :performed_by ?Artist.
+		FILTER(?Artist = &quot;Yeonsoo&quot;).
+}
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Label ?HasArtist
+WHERE { 
+		?Label :has_artist ?HasArtist.
+		FILTER(?HasArtist = &quot;no&quot;).
+}
+
+Prefix : &lt;http://www.semanticweb.org/nadaimari/ontologies/2020/10/untitled-ontology-26#&gt;
+PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+PREFIX xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt;
+SELECT ?Title ?Performed_By  ?Year ?Label ?Written_By
+WHERE { 
+		?Discography :performed_by ?Artist.
+		?Discography :song_title ?Title.
+		?Artist :has_artist_name ?Performed_By.
+		?Discography :released_under ?Label.
+		?Discography :released_time ?Year.
+		?Discography :written_by ?Written_By.
+FILTER (REGEX(str(?Title),&quot;Doodle&quot;,&apos;i&apos;))
+}</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en">An ontology about Baek Yerin and her musical works.
+
+This is an ontology that contains all the necessary constructs for Baek Yerin&apos;s various musical works for which information is available on wikipedia.org.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en">Baek Yerin</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Artist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Discography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DuetSong"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GivenArtist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Label"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeadArtist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Main"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Single"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoloAlbum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Soundtrack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Unknown"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WrittenSong"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#duet_with"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#featured_in"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performed_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_featured_in"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_perform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_promote"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_writting"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#album_by"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#artist_under"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#contributed_artist_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ep_by"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#featured_artist"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_artist"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#has_artist_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#label_name"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#performed_by"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#playlist_title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#released_time"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#released_under"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#song_title"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#soundtrack_by"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#written_by"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AOMG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BloomingMemories"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BlueVinyl"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BrandNewMusic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C9"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CJ"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chungha"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ComeOver"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dean"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Doodle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EveryLetterISentYou"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Excited"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Frank"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FromNowOn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GenieMusic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HowDidYou"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#IllionaireRecords"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JYP"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JunK"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KakaoM"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#KuOneChan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeanOnMe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Light"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MNH"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MeYou"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Olltii"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OnAndOn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OurLoveIsGreat"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Poclanos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Punchnello"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SanE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SeoulMusic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Smile"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Soyou"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Starship"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#StillTheOne"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Taecyeon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TheQuiett"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UMG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Yeonsoo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YoungInLove"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YukJidam"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#Creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#Question_Example_for_SPARQL"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#SPARQL_Query"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Main"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#BaekYerin"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#DuetSong"/>
+        <Class IRI="#Discography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EP"/>
+        <Class IRI="#Discography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GivenArtist"/>
+        <Class IRI="#Artist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Label"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeadArtist"/>
+        <Class IRI="#Artist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Main"/>
+        <Class IRI="#Artist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Single"/>
+        <Class IRI="#Discography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoloAlbum"/>
+        <Class IRI="#Discography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Soundtrack"/>
+        <Class IRI="#Discography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Unknown"/>
+        <Class IRI="#Artist"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WrittenSong"/>
+        <Class IRI="#Discography"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#AOMG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Artist"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Main"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WrittenSong"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Soundtrack"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#BlueVinyl"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#BrandNewMusic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Single"/>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#C9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#CJ"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#Chocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GivenArtist"/>
+        <NamedIndividual IRI="#Chungha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#ComeOver"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#Dean"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#Doodle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SoloAlbum"/>
+        <NamedIndividual IRI="#EveryLetterISentYou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#Excited"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EP"/>
+        <NamedIndividual IRI="#Frank"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WrittenSong"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#GenieMusic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Soundtrack"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#IllionaireRecords"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#JYP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#JunK"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#KakaoM"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#KuOneChan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Soundtrack"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#Light"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Single"/>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#MNH"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#MeYou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#Olltii"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EP"/>
+        <NamedIndividual IRI="#OurLoveIsGreat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#Poclanos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#Punchnello"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#SanE"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#SeoulMusic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WrittenSong"/>
+        <NamedIndividual IRI="#Smile"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GivenArtist"/>
+        <NamedIndividual IRI="#Soyou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#Starship"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WrittenSong"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Single"/>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DuetSong"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#TheQuiett"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Label"/>
+        <NamedIndividual IRI="#UMG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#GivenArtist"/>
+        <NamedIndividual IRI="#Yeonsoo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WrittenSong"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LeadArtist"/>
+        <NamedIndividual IRI="#YukJidam"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#AOMG"/>
+        <NamedIndividual IRI="#Punchnello"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#Chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#ComeOver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#Doodle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#Excited"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#Light"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#MeYou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#EveryLetterISentYou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#Frank"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#OurLoveIsGreat"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_writting"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_writting"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_writting"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#Smile"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_writting"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_writting"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+        <NamedIndividual IRI="#Yeonsoo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#BlueVinyl"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#BrandNewMusic"/>
+        <NamedIndividual IRI="#SanE"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#C9"/>
+        <NamedIndividual IRI="#Olltii"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Chocolate"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Chungha"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Chungha"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#ComeOver"/>
+        <NamedIndividual IRI="#Dean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#Dean"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Dean"/>
+        <NamedIndividual IRI="#ComeOver"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Doodle"/>
+        <NamedIndividual IRI="#Punchnello"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Excited"/>
+        <NamedIndividual IRI="#Olltii"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+        <NamedIndividual IRI="#Chungha"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+        <NamedIndividual IRI="#KuOneChan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#IllionaireRecords"/>
+        <NamedIndividual IRI="#TheQuiett"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#JYP"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#JYP"/>
+        <NamedIndividual IRI="#JunK"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#JYP"/>
+        <NamedIndividual IRI="#SanE"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#JYP"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#JunK"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#JunK"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#KuOneChan"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#KuOneChan"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Light"/>
+        <NamedIndividual IRI="#TheQuiett"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#MNH"/>
+        <NamedIndividual IRI="#Chungha"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#MeYou"/>
+        <NamedIndividual IRI="#SanE"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#Olltii"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Olltii"/>
+        <NamedIndividual IRI="#Excited"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+        <NamedIndividual IRI="#YukJidam"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#Punchnello"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Punchnello"/>
+        <NamedIndividual IRI="#Doodle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#SanE"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#SanE"/>
+        <NamedIndividual IRI="#MeYou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Smile"/>
+        <NamedIndividual IRI="#Yeonsoo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Soyou"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#Starship"/>
+        <NamedIndividual IRI="#Soyou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+        <NamedIndividual IRI="#Soyou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+        <NamedIndividual IRI="#JunK"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+        <NamedIndividual IRI="#Chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#TheQuiett"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#TheQuiett"/>
+        <NamedIndividual IRI="#Light"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_promote"/>
+        <NamedIndividual IRI="#UMG"/>
+        <NamedIndividual IRI="#Dean"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Yeonsoo"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#Yeonsoo"/>
+        <NamedIndividual IRI="#Smile"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+        <NamedIndividual IRI="#Chungha"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#duet_with"/>
+        <NamedIndividual IRI="#YukJidam"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_perform"/>
+        <NamedIndividual IRI="#YukJidam"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#AOMG"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#AOMG"/>
+        <Literal>AOMG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <Literal>BlueVinyl</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <Literal>JYP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#BaekYerin"/>
+        <Literal>BaekYerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+        <Literal>Yeonsoo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+        <Literal>2017</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+        <Literal>Poclanos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+        <Literal>BEFORE I KNEW IT</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#BeforeIKnewIt"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+        <Literal>2017</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+        <Literal>Genie Music</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+        <Literal>BLOOMING MEMORIES</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#soundtrack_by"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#BloomingMemories"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#BlueVinyl"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#BlueVinyl"/>
+        <Literal>BlueVinyl</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#BrandNewMusic"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#BrandNewMusic"/>
+        <Literal>BRANDNEWMUSIC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+        <Literal>2016</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+        <Literal>JYP Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+        <Literal>BYE BYE MY BLUE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#ByeByeMyBlue"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#C9"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#C9"/>
+        <Literal>C9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#CJ"/>
+        <Literal>no</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#CJ"/>
+        <Literal>CJ</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#Chocolate"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Chocolate"/>
+        <Literal>Taecyeon</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#Chocolate"/>
+        <Literal>2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#Chocolate"/>
+        <Literal>JYP Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#Chocolate"/>
+        <Literal>CHOCOLATE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#Chocolate"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#Chungha"/>
+        <Literal>MNH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#Chungha"/>
+        <Literal>Chungha</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#ComeOver"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#ComeOver"/>
+        <Literal>Dean</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#ComeOver"/>
+        <Literal>2017</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#ComeOver"/>
+        <Literal>UMG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#ComeOver"/>
+        <Literal>COME OVER</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#ComeOver"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#Dean"/>
+        <Literal>UMG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#Dean"/>
+        <Literal>Dean</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#Doodle"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Doodle"/>
+        <Literal>Punchnello</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#Doodle"/>
+        <Literal>2019</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#Doodle"/>
+        <Literal>AOMG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#Doodle"/>
+        <Literal>DOODLE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#Doodle"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#album_by"/>
+        <NamedIndividual IRI="#EveryLetterISentYou"/>
+        <Literal>BaekYerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#EveryLetterISentYou"/>
+        <Literal>BaekYerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#playlist_title"/>
+        <NamedIndividual IRI="#EveryLetterISentYou"/>
+        <Literal>EVERYLETTERISENTYOU</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#EveryLetterISentYou"/>
+        <Literal>2019</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#EveryLetterISentYou"/>
+        <Literal>BlueVinyl</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#Excited"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Excited"/>
+        <Literal>Olltii</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#Excited"/>
+        <Literal>2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#Excited"/>
+        <Literal>C9 Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#Excited"/>
+        <Literal>EXCITED</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#Excited"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ep_by"/>
+        <NamedIndividual IRI="#Frank"/>
+        <Literal>BaekYerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Frank"/>
+        <Literal>BaekYerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#playlist_title"/>
+        <NamedIndividual IRI="#Frank"/>
+        <Literal>FRANK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#Frank"/>
+        <Literal>2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#Frank"/>
+        <Literal>JYP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+        <Literal>Chungha</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+        <Literal>2018</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+        <Literal>MNH Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+        <Literal>FROM NOW ON</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#FromNowOn"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#GenieMusic"/>
+        <Literal>no</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#GenieMusic"/>
+        <Literal>GENIEMUSIC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+        <Literal>2020</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+        <Literal>Genie Music</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+        <Literal>HERE I AM AGAIN</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#soundtrack_by"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#HereIAmAgain"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+        <Literal>Ku One Chan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+        <Literal>2018</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+        <Literal>Genie Music</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+        <Literal>HOW DID YOU</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#HowDidYou"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#IllionaireRecords"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#IllionaireRecords"/>
+        <Literal>ILLIONAIRERECORDS</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+        <Literal>Taecyeon</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+        <Literal>2014</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+        <Literal>JYP Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+        <Literal>IT&apos;S ONLY YOU</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#ItsOnlyYou"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#JYP"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#JYP"/>
+        <Literal>JYP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#JunK"/>
+        <Literal>JYP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#JunK"/>
+        <Literal>JunK</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#KakaoM"/>
+        <Literal>no</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#KakaoM"/>
+        <Literal>KAKAOM</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#KuOneChan"/>
+        <Literal>no label</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#KuOneChan"/>
+        <Literal>KuOneChan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+        <Literal>2019</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+        <Literal>Kakao M</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+        <Literal>LEAN ON ME</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#soundtrack_by"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#LeanOnMe"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#Light"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Light"/>
+        <Literal>The Quiett</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#Light"/>
+        <Literal>2017</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#Light"/>
+        <Literal>Illionaire Records</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#Light"/>
+        <Literal>LIGHT</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#Light"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+        <Literal>2016</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+        <Literal>JYP E ntertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+        <Literal>LOVE YOU ON CHRISTMAS</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#LoveYouOnChristmas"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#MNH"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#MNH"/>
+        <Literal>MNH</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#MeYou"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#MeYou"/>
+        <Literal>San E</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#MeYou"/>
+        <Literal>2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#MeYou"/>
+        <Literal>Brand New Music</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#MeYou"/>
+        <Literal>ME YOU</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#MeYou"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#Olltii"/>
+        <Literal>C9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#Olltii"/>
+        <Literal>Olltii</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+        <Literal>Yuk Jidam</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+        <Literal>2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+        <Literal>CJ Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+        <Literal>ON AND ON</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#OnAndOn"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#ep_by"/>
+        <NamedIndividual IRI="#OurLoveIsGreat"/>
+        <Literal>BaekYerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#OurLoveIsGreat"/>
+        <Literal>BaekYerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#playlist_title"/>
+        <NamedIndividual IRI="#OurLoveIsGreat"/>
+        <Literal>OURLOVEISGREAT</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#OurLoveIsGreat"/>
+        <Literal>2019</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#OurLoveIsGreat"/>
+        <Literal>JYP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#Poclanos"/>
+        <Literal>no</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#Poclanos"/>
+        <Literal>POCLANOS</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#Punchnello"/>
+        <Literal>AOMG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#Punchnello"/>
+        <Literal>Punchnello</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#SanE"/>
+        <Literal>BrandNewMusic</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#SanE"/>
+        <Literal>SanE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#SeoulMusic"/>
+        <Literal>no</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#SeoulMusic"/>
+        <Literal>SEOULMUSIC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#Smile"/>
+        <Literal>Yeonsoo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#Smile"/>
+        <Literal>2018</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#Smile"/>
+        <Literal>Poclanos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#Smile"/>
+        <Literal>SMILE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#Smile"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#Soyou"/>
+        <Literal>Starship</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#Soyou"/>
+        <Literal>Soyou</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#Starship"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#Starship"/>
+        <Literal>STARSHIP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+        <Literal>Soyou</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+        <Literal>2017</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+        <Literal>Starship Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+        <Literal>STILL THE ONE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#StillTheOne"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+        <Literal>2019</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+        <Literal>Seoul Music</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+        <Literal>SUDDENLY EONEUSAE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#SuddenlyEoNeuSae"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#featured_artist"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+        <Literal>Jun K</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+        <Literal>2014</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+        <Literal>JYP Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+        <Literal>SUDDENLY MUNDEUG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#SuddenlyMunDeug"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+        <Literal>JYP</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#Taecyeon"/>
+        <Literal>Taecyon</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#TheQuiett"/>
+        <Literal>IllionaireRecords</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#TheQuiett"/>
+        <Literal>TheQuiett</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist"/>
+        <NamedIndividual IRI="#UMG"/>
+        <Literal>yes</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#label_name"/>
+        <NamedIndividual IRI="#UMG"/>
+        <Literal>UMG</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#Yeonsoo"/>
+        <Literal>no label</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#Yeonsoo"/>
+        <Literal>Yeonsoo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#performed_by"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+        <Literal>Chungha</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_time"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+        <Literal>2019</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#released_under"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+        <Literal>MNH Entertainment</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#song_title"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+        <Literal>YOUNG IN LOVE</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#written_by"/>
+        <NamedIndividual IRI="#YoungInLove"/>
+        <Literal>Baek Yerin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#artist_under"/>
+        <NamedIndividual IRI="#YukJidam"/>
+        <Literal>no label</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#has_artist_name"/>
+        <NamedIndividual IRI="#YukJidam"/>
+        <Literal>YukJidam</Literal>
+    </DataPropertyAssertion>
+    <EquivalentObjectProperties>
+        <ObjectProperty IRI="#featured_in"/>
+        <ObjectProperty IRI="#was_featured_in"/>
+    </EquivalentObjectProperties>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#duet_with"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#featured_in"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_perform"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_promote"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#was_writting"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#featured_in"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#was_featured_in"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#duet_with"/>
+        <Class IRI="#LeadArtist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#performed_by"/>
+        <Class IRI="#Discography"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <Class IRI="#Main"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_perform"/>
+        <Class IRI="#Artist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_promote"/>
+        <Class IRI="#Label"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_writting"/>
+        <Class IRI="#Artist"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#was_writting"/>
+        <Class IRI="#Main"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#duet_with"/>
+        <Class IRI="#Main"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performed_by"/>
+        <Class IRI="#Artist"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_featured_in"/>
+        <Class IRI="#DuetSong"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_perform"/>
+        <Class IRI="#Discography"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_promote"/>
+        <Class IRI="#Artist"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#was_writting"/>
+        <Class IRI="#WrittenSong"/>
+    </ObjectPropertyRange>
+    <EquivalentDataProperties>
+        <DataProperty IRI="#contributed_artist_name"/>
+        <DataProperty IRI="#has_artist_name"/>
+    </EquivalentDataProperties>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#written_by"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#album_by"/>
+        <Class IRI="#SoloAlbum"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#artist_under"/>
+        <Class IRI="#Artist"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ep_by"/>
+        <Class IRI="#EP"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#featured_artist"/>
+        <Class IRI="#Discography"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#has_artist"/>
+        <Class IRI="#Label"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#label_name"/>
+        <Class IRI="#Label"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performed_by"/>
+        <Class IRI="#Discography"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performed_by"/>
+        <Class IRI="#DuetSong"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performed_by"/>
+        <Class IRI="#EP"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performed_by"/>
+        <Class IRI="#Single"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performed_by"/>
+        <Class IRI="#SoloAlbum"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performed_by"/>
+        <Class IRI="#Soundtrack"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#performed_by"/>
+        <Class IRI="#WrittenSong"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#playlist_title"/>
+        <Class IRI="#EP"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#playlist_title"/>
+        <Class IRI="#SoloAlbum"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#released_time"/>
+        <Class IRI="#Discography"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#released_under"/>
+        <Class IRI="#Discography"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#song_title"/>
+        <Class IRI="#Discography"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#song_title"/>
+        <Class IRI="#DuetSong"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#song_title"/>
+        <Class IRI="#Single"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#song_title"/>
+        <Class IRI="#Soundtrack"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#song_title"/>
+        <Class IRI="#WrittenSong"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#soundtrack_by"/>
+        <Class IRI="#Soundtrack"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#written_by"/>
+        <Class IRI="#DuetSong"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#written_by"/>
+        <Class IRI="#Single"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#written_by"/>
+        <Class IRI="#Soundtrack"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#written_by"/>
+        <Class IRI="#WrittenSong"/>
+    </DataPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#was_featured_in</IRI>
+        <Literal xml:lang="en">was_featured_in</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
